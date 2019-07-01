@@ -1,3 +1,5 @@
+FLICKR_TECH_TEST
+
 DEVELOPED BY ALEXANDER SPENCER
 
 This program was developed for the flickr_tech test perscribed by formedix.
