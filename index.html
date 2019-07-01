@@ -26,7 +26,7 @@
            </md-input-container>
        </form>
 
-       <!--<div ng-repeat="picture in results.photos.photo"> -->
+
        <md-card ng-repeat="picture in results.photos.photo">
            <img ng-src="https://farm{{picture.farm}}.staticflickr.com/{{picture.server}}/{{picture.id}}_{{picture.secret}}_b.jpg" alt="ing from flickr" class="md-card-img" id="{{picture.id}}/">
            <h3>{{picture.title}}</h3>
