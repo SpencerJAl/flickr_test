@@ -4,38 +4,43 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, intial-scale=1.0, maxium-scale=1.0, minimum-sacle=1.0"/>
         <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css"/>
-        <!-- <link rel="stylesheet" href="bower_components/angular-material" -->
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
         <title>Flickr Test App</title>
     </head>
-    <body ng-app="FlickrApp" ng-controller="ListController" layout="column" layout-align="top center">
-<md-toolbar>
+    <body ng-app="App" ng-controller="ListController" layout="column" layout-align="top center">
+    <md-toolbar>
     <div class="md-toolbar-tools">
         <span class="md-flex">Flickr Search </span>
     </div>
 </md-toolbar>
+<div id="space">
+
+</div>
 <md-content layout="column" layout-align="center center">
   <div class="app-content">
        <form ng-submit="search()">
-           <div ng-show="!isSearching">
-           <md-text-float label="search for" ng-model="searchTerm"></md-text-float>
-           </div>
-           <md-progress-circular ng-if="isSearching" md-theme="blue" md-mode="indeterminate"></md-progress-circular> 
+           <md-input-container>
+           <label>search for</label>
+           <input ng-model="searchTerm" type="text" class="long">
+           </md-input-container>
        </form>
+
+       <!--<div ng-repeat="picture in results.photos.photo"> -->
        <md-card ng-repeat="picture in results.photos.photo">
-           <img ng-src="https://farm{{picture.farm}}.staticflickr.com/{{pciture.server}}/{{picture.id}}_{{picture.secret}}_b.jpg" alt="ing from flickr/">
+           <img ng-src="https://farm{{picture.farm}}.staticflickr.com/{{picture.server}}/{{picture.id}}_{{picture.secret}}_b.jpg" alt="ing from flickr" class="md-card-img" id="{{picture.id}}/">
            <h3>{{picture.title}}</h3>
        </md-card>
+
+
   </div>
 </md-content>
-
-
-    <script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-aria/angular-aria.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/hammerjs/hammer.min.js"></script>
     <script src="bower_components/angular-material/angular-material.min.js"></script>
-    <script src="app.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+   <script src="./app.js"></script>
     </body>
 </html>
